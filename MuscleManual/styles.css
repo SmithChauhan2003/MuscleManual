@@ -1,0 +1,434 @@
+.male-body-layout,
+.female-body-layout {
+  padding-top: 80px;
+  justify-content: center;
+  align-items: center;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  font-family: "Calibri";
+  margin: 0;
+}
+
+.body-map__muscle path:hover {
+  fill: rgb(255, 49, 49) !important;
+  cursor: pointer;
+}
+
+.front-body-male,
+.front-body-female {
+  margin-right: 20px;
+}
+
+.front-body-female svg {
+  height: 600px;
+}
+
+.back-body-female svg {
+  height: 600px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 70px;
+  border-bottom: 2px solid grey;
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+}
+
+.logo {
+  width: fit-content;
+  height: 115px;
+  margin-top: 55px;
+}
+.search-bar-nav
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-btn:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 49, 49);
+  border: 1px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+}
+
+.search-btn{
+  outline: none;
+  border: 1px;
+  padding: 0.5rem 1.2rem;
+  background-color: rgb(255, 49, 49);
+  border-radius: 24px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  width: 100px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.2rem;
+  z-index: 10;
+  transition: all 0.2s ease-in-out 0s;
+  
+}
+
+.search-bar {
+  height: 35px;
+  width: 500px;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: black;
+  padding-left: 12px;
+  margin-left: 100px;
+  margin-right: 10px;
+}
+
+.search-bar::placeholder {
+  color: grey;
+  margin-bottom: 8px;
+}
+
+.gender {
+  display: flex;
+  width: 200px;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 19px;
+}
+
+.gender-female-check,
+.gender-male-check:hover {
+  cursor: pointer;
+}
+
+.card {
+  width: 320px;
+  height: 400px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(17, 15, 15, 0.1) 0px 2px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  -webkit-box-pack: justify;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-bottom: 10px;
+  transition: all 0.5s ease 0s;
+  margin: 10px 40px;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.08);
+}
+
+.ex-name {
+  margin-top: 12px;
+  padding: 12px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ex-img {
+  margin-bottom: 12px;
+  padding: 0;
+  width: 70%;
+  overflow: clip;
+}
+
+.card-container {
+  display: flex;
+  margin-top: 150px;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 70px;
+  row-gap: 50px;
+}
+
+.info-muscles {
+  display: flex;
+  gap: 100px;
+}
+
+.bodyPart {
+  margin-bottom: 12px;
+  padding: 8px;
+  border: none;
+  background-color: rgb(255, 49, 49);
+  text-transform: capitalize;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.targetMuscles {
+  margin-bottom: 12px;
+  padding: 8px;
+  border: none;
+  text-transform: capitalize;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.wrapper {
+  display: inline-flex;
+  height: auto;
+  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 20px 15px;
+}
+.wrapper .option {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+}
+.wrapper .option .dot {
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+.wrapper .option .dot::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: rgb(255, 49, 49);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+input[type="radio"] {
+  display: none;
+}
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2 {
+  border-color: rgb(255, 49, 49);
+  background: rgb(255, 49, 49);
+}
+#option-1:checked:checked ~ .option-1 .dot,
+#option-2:checked:checked ~ .option-2 .dot {
+  background: #fff;
+}
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.wrapper .option span {
+  font-size: 20px;
+  color: black;
+  margin-left: 10px;
+}
+#option-1:checked:checked ~ .option-1 span,
+#option-2:checked:checked ~ .option-2 span {
+  color: white;
+}
+
+.navbar-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  border-bottom: 2px solid grey;
+  background-color: white;
+}
+
+.logo-2 {
+  width: fit-content;
+  height: 115px;
+  margin-top: 56px;
+  margin-left: 93px;
+}
+
+.card-container-2 {
+  margin: 0px 0 0 0;
+  display: flex;
+  gap: 80px;
+  align-items:start;
+}
+
+.gif-ex-details {
+  margin: 40px 0 0 40px;
+  height: fit-content;
+  width: fit-content;
+  box-shadow: 0px 0px 12px 0px rgba(150, 150, 150, 1);
+  border-radius: 8px;
+  padding: 90px 100px 90px 100px;
+  
+}
+
+.home-icon {
+  width: 25px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.exercise-name-txt
+{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-transform: uppercase; 
+  font-size: 35px;
+  padding-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top:0;
+}
+
+.target-muscle-txt,.muscle-txt,.equipment-txt
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70px;
+  width: fit-content;
+  margin: 10px 0 10px 0;
+}
+
+.zfdg
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  width: 500px;
+  column-gap:60px;
+  row-gap:20px
+}
+
+.info-page-img{
+width: 50px;
+height: 50px;
+padding: 10px;
+box-shadow:  rgba(0, 0, 0, 0.2) 0px 2px 8px;;
+border-radius:100% ;
+margin-right:15px ;
+}
+
+
+
+
+.target-muscle-txt,.muscle-txt,.equipment-txt-p
+{
+font-size: 25px;
+text-transform: uppercase;
+font-weight: bold;
+text-transform: capitalize;
+}
+
+
+
+.info-new-page
+{
+  align-self: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.asdsad
+{
+  
+  color:  rgb(255, 49, 49);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.dfs
+{
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content:center ;
+  
+}
+
+.sdvsd
+{
+  margin: 30px 0 0 10px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.vmjckl
+{
+  color:  rgb(255, 49, 49);
+}
+
+.vid-container
+{
+  display:flex;
+  padding-left: 509px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width:300px;
+  overflow-x: scroll;
+  margin-top: 20px;
+}
+
+div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+div::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+div::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: rgb(255, 49, 49);
+  width: 1px;
+}
+
+.vid
+{
+  height: 200px;
+  width:300px
+}
+
+
+.left-arrow svg{
+  fill:  rgb(255, 49, 49);
+}
+
